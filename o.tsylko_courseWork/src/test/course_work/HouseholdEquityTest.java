@@ -42,8 +42,38 @@ public class HouseholdEquityTest extends BaseTest {
         hsDet.validationMessIsNotPresent();
 
         logger.step(6);
+        logger.info("Household Types validation message");
+        hsDet.householdType.click();
+        hsDet.validationMessMandatoryField();
+
+        logger.step(7);
         logger.info("Household Types selection");
-        hsDet.householdType.selectItem("1");
+        hsDet.householdType.selectItem("Couple with no children");
+        hsDet.householdType.selectItem("Couple with children");
+        hsDet.householdType.selectItem("Single Person");
+        hsDet.householdType.selectItem("Single Parent");
+        hsDet.householdType.selectItem("Unknown");
+
+        logger.step(8);
+        logger.info("Residence Status validation message");
+        hsDet.residenceStatus.click();
+        hsDet.validationMessMandatoryField();
+
+        logger.step(9);
+        logger.info("Residence Status selection");
+        hsDet.residenceStatus.selectItem("Tenant");
+        hsDet.residenceStatus.selectItem("Home Owner");
+        hsDet.residenceStatus.selectItem("Living with Parents");
+        hsDet.residenceStatus.selectItem("No Fixed Abode");
+        hsDet.residenceStatus.selectItem("Sheltered Accommodation");
+        hsDet.residenceStatus.selectItem("Unknown");
+
+
+        logger.step(10);
+        logger.info("Employment Status selection");
+
+
+
 
     }
 

@@ -23,6 +23,7 @@ public class DropDown extends BaseElement {
     public void selectItem(String value) {
         WebElement el = browser.getDriver().findElement(this.getLocator());
         Select categories = new Select(el);
-        categories.selectByValue(value);
+        //categories.selectByValue(value);
+        categories.selectByVisibleText(value);
     }
 }
