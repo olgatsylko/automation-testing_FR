@@ -1,4 +1,4 @@
-package course_work.forms;
+package nyx_solution.forms;
 
 import framework.BaseForm;
 import framework.elements.Button;

@@ -4,12 +4,12 @@
 
     <!--<test name="Validation of Creation option" preserve-order="true">
         <classes>
-            <class name="course_work.SfsCreate"/>
+            <class name="nyx_solution.SfsCreate"/>
         </classes>
     </test>-->
     <test name="Validation of Household and Equity details page" preserve-order="true">
         <classes>
-            <class name="course_work.HouseholdEquityTest"/>
+            <class name="nyx_solution.HouseholdEquityTest"/>
         </classes>
     </test>
 </suite>
