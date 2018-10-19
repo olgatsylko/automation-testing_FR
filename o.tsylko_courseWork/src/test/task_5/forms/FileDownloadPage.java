@@ -1,9 +1,8 @@
 package task_5.forms;
 
-import miniSmart.webdriver.BaseForm;
-import miniSmart.webdriver.Browser;
-import miniSmart.webdriver.elements.Button;
-import org.apache.commons.io.FilenameUtils;
+import framework.BaseForm;
+import framework.Browser;
+import framework.elements.Button;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import java.io.File;

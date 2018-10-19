@@ -1,7 +1,7 @@
 package task_5;
 
-import miniSmart.webdriver.elements.Label;
-import miniSmart.webdriver.elements.TableResults;
+import framework.elements.Label;
+import framework.elements.TableResults;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import java.util.ArrayList;

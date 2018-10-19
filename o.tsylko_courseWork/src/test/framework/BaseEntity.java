@@ -1,16 +1,13 @@
-package miniSmart.webdriver;
-
-import static org.testng.AssertJUnit.assertTrue;
-
-import java.io.BufferedReader;
-
-import java.io.InputStreamReader;
-
+package framework;
 
 import org.testng.ITestContext;
-
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+import static org.testng.AssertJUnit.assertTrue;
 
 
 /**

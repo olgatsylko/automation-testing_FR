@@ -1,7 +1,7 @@
 package task_5.forms;
 
-import miniSmart.webdriver.BaseForm;
-import miniSmart.webdriver.elements.Button;
+import framework.BaseForm;
+import framework.elements.Button;
 import org.openqa.selenium.By;
 
 public class AgeValidWind extends BaseForm {

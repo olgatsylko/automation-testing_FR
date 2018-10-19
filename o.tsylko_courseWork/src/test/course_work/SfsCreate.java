@@ -1,7 +1,7 @@
 package course_work;
 
 import course_work.forms.SfsPending_complete;
-import miniSmart.webdriver.BaseTest;
+import framework.BaseTest;
 
 public class SfsCreate extends BaseTest {
     public void runTest() {

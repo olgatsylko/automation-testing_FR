@@ -1,8 +1,8 @@
 package course_work.forms;
 
-import miniSmart.webdriver.BaseForm;
-import miniSmart.webdriver.elements.Button;
-import miniSmart.webdriver.elements.TextBox;
+import framework.BaseForm;
+import framework.elements.Button;
+import framework.elements.TextBox;
 import org.openqa.selenium.By;
 
 public class AgentPortal extends BaseForm {

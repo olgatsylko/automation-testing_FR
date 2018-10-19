@@ -1,4 +1,4 @@
-package miniSmart.webdriver;
+package framework;
 
 import org.testng.annotations.Test;
 

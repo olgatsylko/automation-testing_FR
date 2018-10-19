@@ -2,7 +2,7 @@ package course_work;
 
 import course_work.forms.HouseholdEquityDetails;
 import course_work.forms.SfsPending_complete;
-import miniSmart.webdriver.BaseTest;
+import framework.BaseTest;
 import static course_work.forms.HouseholdEquityDetails.Fields.Children16_18;
 import static course_work.forms.HouseholdEquityDetails.Fields.ChildrenUnder16;
 import static course_work.forms.HouseholdEquityDetails.Fields.NumberInHouseHold;
@@ -68,11 +68,21 @@ public class HouseholdEquityTest extends BaseTest {
         hsDet.residenceStatus.selectItem("Sheltered Accommodation");
         hsDet.residenceStatus.selectItem("Unknown");
 
-
         logger.step(10);
         logger.info("Employment Status selection");
+        hsDet.employmentStatus.selectItem("Full Time");
+        hsDet.employmentStatus.selectItem("Part Time");
+        hsDet.employmentStatus.selectItem("Self Employed");
+        hsDet.employmentStatus.selectItem("Unemployed");
+        hsDet.employmentStatus.selectItem("Unknown");
 
-
+        logger.step(11);
+        logger.info("Partners Employment Status selection");
+        hsDet.partnersEmploymentStatus.selectItem("Full Time");
+        hsDet.partnersEmploymentStatus.selectItem("Part Time");
+        hsDet.partnersEmploymentStatus.selectItem("Self Employed");
+        hsDet.partnersEmploymentStatus.selectItem("Unemployed");
+        hsDet.partnersEmploymentStatus.selectItem("Unknown");
 
 
     }

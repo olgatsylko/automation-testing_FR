@@ -1,7 +1,7 @@
-package miniSmart.webdriver;
+package framework;
 
 import com.google.common.base.Strings;
-import miniSmart.webdriver.elements.Label;
+import framework.elements.Label;
 import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import javax.naming.NamingException;
 import java.util.concurrent.TimeUnit;
 
-import static miniSmart.webdriver.Logger.getLoc;
+import static framework.Logger.getLoc;
 
 /**
  * The main class to access the browser, which extends the capabilities of the standard Webdriver

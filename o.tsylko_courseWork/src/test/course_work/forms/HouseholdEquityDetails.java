@@ -1,9 +1,9 @@
 package course_work.forms;
 
-import miniSmart.webdriver.BaseForm;
-import miniSmart.webdriver.elements.DropDown;
-import miniSmart.webdriver.elements.Label;
-import miniSmart.webdriver.elements.TextBox;
+import framework.BaseForm;
+import framework.elements.DropDown;
+import framework.elements.Label;
+import framework.elements.TextBox;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
@@ -15,8 +15,8 @@ public class HouseholdEquityDetails extends BaseForm {
     public Label mandatoryFieldMess = new Label(By.xpath("//span[contains(text(), \"This is a required field.\")]"), "Mandatory field valid mess");
     public DropDown householdType = new DropDown(By.xpath("//select[contains(@name, \"householdType\")]"), "Household Type dropdown");
     public DropDown residenceStatus = new DropDown(By.xpath("//select[contains(@name, \"residenceStatus\")]"), "Residence Status dropdown");
-
-
+    public DropDown employmentStatus = new DropDown(By.xpath("//select[contains(@name, \"employmentStatus\")]"), "Employment Status dropdown");
+    public DropDown partnersEmploymentStatus = new DropDown(By.xpath("//select[contains(@name, \"partnersEmploymentStatus\")]"), " Partner Employment Status dropdown");
 
 public HouseholdEquityDetails() {
         super(By.xpath("//div[contains(@class, \"ccm-panel\")]"), "Household and Equity Details page");

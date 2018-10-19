@@ -1,12 +1,10 @@
-package miniSmart.webdriver;
+package framework;
 
 import java.io.File;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Map;
 
 import javax.naming.NamingException;
 

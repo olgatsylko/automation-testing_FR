@@ -1,15 +1,15 @@
-package miniSmart.webdriver;
+package framework;
 
-import miniSmart.webdriver.elements.Label;
-import java.util.Date;
-import java.util.List;
-
+import framework.elements.Label;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import java.util.Date;
+import java.util.List;
 
 /**
  * Base form

@@ -1,8 +1,8 @@
 package task_5.forms;
 
-import miniSmart.webdriver.BaseForm;
-import miniSmart.webdriver.BrowserFactory;
-import miniSmart.webdriver.elements.Label;
+import framework.BaseForm;
+import framework.BrowserFactory;
+import framework.elements.Label;
 import org.openqa.selenium.By;
 import task_5.ActionResultTable;
 

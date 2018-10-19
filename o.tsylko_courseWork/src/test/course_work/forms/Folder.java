@@ -1,9 +1,9 @@
 package course_work.forms;
 
-import miniSmart.webdriver.BaseForm;
-import miniSmart.webdriver.elements.Button;
-import miniSmart.webdriver.elements.Email;
-import miniSmart.webdriver.elements.Label;
+import framework.BaseForm;
+import framework.elements.Button;
+import framework.elements.Email;
+import framework.elements.Label;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 

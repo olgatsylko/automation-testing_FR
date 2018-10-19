@@ -1,7 +1,7 @@
-package miniSmart.webdriver.elements;
-import miniSmart.webdriver.BaseEntity;
-import miniSmart.webdriver.Browser;
-import miniSmart.webdriver.Logger;
+package framework.elements;
+import framework.BaseEntity;
+import framework.Browser;
+import framework.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebElement;

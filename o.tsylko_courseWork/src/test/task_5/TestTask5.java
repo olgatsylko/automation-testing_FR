@@ -1,6 +1,6 @@
 package task_5;
 
-import miniSmart.webdriver.BaseTest;
+import framework.BaseTest;
 import task_5.forms.*;
 
 
