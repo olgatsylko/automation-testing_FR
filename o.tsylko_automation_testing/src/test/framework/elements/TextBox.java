@@ -35,8 +35,6 @@ public class TextBox extends BaseElement {
 		return getLoc("loc.text.field");
 	}
 
-	
-
 	/**
 	 * Constructor
 	 * @param locator locator
@@ -77,5 +75,11 @@ public class TextBox extends BaseElement {
 	public String getValue() {
 		waitForIsElementPresent();
 		return element.getAttribute("value");
+	}
+
+	public Double getFieldValue(){
+		String s = this.getValue();
+		Double result = Double.parseDouble(s);
+		return result;
 	}
 }

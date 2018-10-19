@@ -1,11 +1,11 @@
 package nyx_solution;
 
+import framework.BaseTest;
 import nyx_solution.forms.HouseholdEquityDetails;
 import nyx_solution.forms.SfsPending_complete;
-import framework.BaseTest;
-import static nyx_solution.forms.HouseholdEquityDetails.Fields.Children16_18;
-import static nyx_solution.forms.HouseholdEquityDetails.Fields.ChildrenUnder16;
-import static nyx_solution.forms.HouseholdEquityDetails.Fields.NumberInHouseHold;
+import org.testng.Assert;
+
+import static nyx_solution.forms.HouseholdEquityDetails.Fields.*;
 
 public class HouseholdEquityTest extends BaseTest {
     public void runTest() {
@@ -28,7 +28,7 @@ public class HouseholdEquityTest extends BaseTest {
         hsDet.householdSumMess();
 
         logger.step(4);
-        logger.info("Household and Eq section: household vs Total sum validation message");
+        logger.info("Household and Equity section: household vs Total sum validation message");
         hsDet.populateItem(NumberInHouseHold, "3");
         hsDet.populateItem(ChildrenUnder16, "2");
         hsDet.populateItem(Children16_18, "1");
@@ -84,7 +84,18 @@ public class HouseholdEquityTest extends BaseTest {
         hsDet.partnersEmploymentStatus.selectItem("Unemployed");
         hsDet.partnersEmploymentStatus.selectItem("Unknown");
 
+        logger.step(12);
+        logger.info("Outstanding Mortgage validation message");
+        hsDet.populateItem(OutstandingMORTGAGE, "999999999.01");
+        Assert.assertTrue(hsDet.outstandMortgageMess.isPresent());
 
+        /*logger.step(13);
+        logger.info("Outstanding Mortgage validation");
+        hsDet.populateItem(VALUEofHome, "200000.00");
+        hsDet.populateItem(OutstandingMORTGAGE, "0.00");
+        System.out.println("FINISH!!!");
+        System.out.println(hsDet.equityOfHome.getFieldValue());
+        Assert.assertTrue(hsDet.equityOfHome.getFieldValue()==0.00);*/
     }
 
 

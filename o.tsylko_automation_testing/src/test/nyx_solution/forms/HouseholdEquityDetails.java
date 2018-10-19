@@ -1,6 +1,7 @@
 package nyx_solution.forms;
 
 import framework.BaseForm;
+import framework.elements.Button;
 import framework.elements.DropDown;
 import framework.elements.Label;
 import framework.elements.TextBox;
@@ -13,15 +14,20 @@ public class HouseholdEquityDetails extends BaseForm {
     public Label householdMess = new Label(By.xpath("//span[contains(text(), 'The number must be equal or greater than 1.')]"), "The number must be equal or greater than 1 mess");
     public Label householdMessVsTotalChild = new Label (By.xpath("//span[contains(text(), 'The sum of \"Children Under 16\" and \"Children 16 to 18\" must be less than \"Number In Household\".')]"), "The summ mess");
     public Label mandatoryFieldMess = new Label(By.xpath("//span[contains(text(), \"This is a required field.\")]"), "Mandatory field valid mess");
+    public Label outstandMortgageMess = new Label(By.xpath("//span[contains(text(), \"The number must be less than 999,999,999.\")]"), "Outstanding Mortgage format valid mess");
+    public Button next = new Button(By.xpath("//button[contains(text(), 'Next')]"), "Next button");
     public DropDown householdType = new DropDown(By.xpath("//select[contains(@name, \"householdType\")]"), "Household Type dropdown");
     public DropDown residenceStatus = new DropDown(By.xpath("//select[contains(@name, \"residenceStatus\")]"), "Residence Status dropdown");
     public DropDown employmentStatus = new DropDown(By.xpath("//select[contains(@name, \"employmentStatus\")]"), "Employment Status dropdown");
     public DropDown partnersEmploymentStatus = new DropDown(By.xpath("//select[contains(@name, \"partnersEmploymentStatus\")]"), " Partner Employment Status dropdown");
+    public TextBox equityOfHome = new TextBox(By.xpath("//input[contains(@name,\"outstandingDebt\")]"));
+
 
 public HouseholdEquityDetails() {
         super(By.xpath("//div[contains(@class, \"ccm-panel\")]"), "Household and Equity Details page");
     }
-    public enum Fields {NumberInHouseHold ("numberInHousehold"), ChildrenUnder16 ("numberOfChildrenUnder16"), Children16_18("numberOfChildren16to18");
+    public enum Fields {
+        Children16_18("numberOfChildren16to18"), ChildrenUnder16("numberOfChildrenUnder16"), VALUEofHome("propertyValue"), NumberInHouseHold("numberInHousehold"), OutstandingMORTGAGE("mortgageAmount"),;
         private String uniqueLocator;
         Fields(String uniqueLocator) {
             this.uniqueLocator = uniqueLocator;
@@ -50,4 +56,6 @@ public HouseholdEquityDetails() {
         header.click();
         Assert.assertTrue(mandatoryFieldMess.isPresent());
     }
+
+
 }
