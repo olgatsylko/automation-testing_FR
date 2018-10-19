@@ -11,7 +11,7 @@ public class CancelOptionValidation extends BaseTest {
         LoginForm loginForm = new LoginForm();
         loginForm.doLogin(Browser.userName, Browser.userPassword);
 
-        logger.step(2);
+        logger.step(2); //test comment
         logger.info("Open New Message form");
         MailBox mailBox = new MailBox();
         mailBox.openNewMessageForm();
