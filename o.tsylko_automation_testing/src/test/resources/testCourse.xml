@@ -6,15 +6,15 @@
         <classes>
             <class name="nyx_solution.SfsCreate"/>
         </classes>
-    </test>
+    </test>-->
     <test name="Validation of Household and Equity details page" preserve-order="true">
         <classes>
             <class name="nyx_solution.HouseholdEquityTest"/>
         </classes>
-    </test>-->
-    <test name="Validation of Priority Bills page" preserve-order="true">
+    </test>
+   <!-- <test name="Validation of Priority Bills page" preserve-order="true">
         <classes>
             <class name="nyx_solution.ExpendGroupPriorityBills"/>
         </classes>
-    </test>
+    </test>-->
 </suite>

@@ -74,12 +74,19 @@ public class TextBox extends BaseElement {
 	 */
 	public String getValue() {
 		waitForIsElementPresent();
+		System.out.println("Value in the field: " + element.getAttribute("value"));
 		return element.getAttribute("value");
+
 	}
 
-	public Double getFieldValue(){
-		String s = this.getValue();
-		Double result = Double.parseDouble(s);
+	public String getText(){
+		waitForIsElementPresent();
+		System.out.println("Text in the field: " +  element.getText());
+		return element.getText();
+	}
+
+	public Double getFieldValueDouble(){
+		Double result = Double.parseDouble(getText());
 		return result;
 	}
 }

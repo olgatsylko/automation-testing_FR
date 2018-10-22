@@ -1,10 +1,7 @@
 package nyx_solution.forms;
 
 import framework.BaseForm;
-import framework.elements.Button;
-import framework.elements.DropDown;
-import framework.elements.Label;
-import framework.elements.TextBox;
+import framework.elements.*;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
@@ -21,7 +18,9 @@ public class HouseholdEquityDetails extends BaseForm {
     public DropDown employmentStatus = new DropDown(By.xpath("//select[contains(@name, \"employmentStatus\")]"), "Employment Status dropdown");
     public DropDown partnersEmploymentStatus = new DropDown(By.xpath("//select[contains(@name, \"partnersEmploymentStatus\")]"), " Partner Employment Status dropdown");
     public TextBox equityOfHome = new TextBox(By.xpath("//input[contains(@name,\"outstandingDebt\")]"));
-
+    public Button cancel = new Button(By.xpath("//button[contains(text(), 'Cancel')]"), "Cancel button");
+    public PopUp confirmLeavePage = new PopUp(By.xpath("//div[contains(text(), 'Are you sure you want to leave current page and do not save data?')]"), "Confirmation to leave the page");
+    public Button ok = new Button(By.xpath("//button[contains(text(), 'OK')]"), "OK button");
 
 public HouseholdEquityDetails() {
         super(By.xpath("//div[contains(@class, \"ccm-panel\")]"), "Household and Equity Details page");

@@ -89,13 +89,21 @@ public class HouseholdEquityTest extends BaseTest {
         hsDet.populateItem(OutstandingMORTGAGE, "999999999.01");
         Assert.assertTrue(hsDet.outstandMortgageMess.isPresent());
 
-        /*logger.step(13);
+        logger.step(13);
         logger.info("Outstanding Mortgage validation");
         hsDet.populateItem(VALUEofHome, "200000.00");
-        hsDet.populateItem(OutstandingMORTGAGE, "0.00");
-        System.out.println("FINISH!!!");
-        System.out.println(hsDet.equityOfHome.getFieldValue());
-        Assert.assertTrue(hsDet.equityOfHome.getFieldValue()==0.00);*/
+        hsDet.populateItem(OutstandingMORTGAGE, "100000.00 ");
+        //System.out.println(hsDet.equityOfHome.getValue());
+       // Assert.assertTrue(hsDet.equityOfHome.==0.00);
+
+
+        logger.step(14);
+        logger.info("Click Cancel button");
+        hsDet.cancel.click();
+        Assert.assertTrue(hsDet.confirmLeavePage.isPresent());
+        hsDet.ok.click();
+
+
     }
 
 
