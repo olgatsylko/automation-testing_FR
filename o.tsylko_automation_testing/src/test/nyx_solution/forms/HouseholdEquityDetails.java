@@ -5,8 +5,12 @@ import framework.elements.*;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
+import java.util.Calendar;
+import java.util.TimeZone;
+
 public class HouseholdEquityDetails extends BaseForm {
     private String pattern = "//input[contains(@name,\"%s\")]";
+    private String patternDate = "//span[contains(text(),\"%s\")]/parent::button";
     private Label header = new Label(By.xpath("//div[contains(@class, \"ccm-panel\")]"), "Household and Equity Details page");
     public Label householdMess = new Label(By.xpath("//span[contains(text(), 'The number must be equal or greater than 1.')]"), "The number must be equal or greater than 1 mess");
     public Label householdMessVsTotalChild = new Label (By.xpath("//span[contains(text(), 'The sum of \"Children Under 16\" and \"Children 16 to 18\" must be less than \"Number In Household\".')]"), "The summ mess");
@@ -21,6 +25,7 @@ public class HouseholdEquityDetails extends BaseForm {
     public Button cancel = new Button(By.xpath("//button[contains(text(), 'Cancel')]"), "Cancel button");
     public PopUp confirmLeavePage = new PopUp(By.xpath("//div[contains(text(), 'Are you sure you want to leave current page and do not save data?')]"), "Confirmation to leave the page");
     public Button ok = new Button(By.xpath("//button[contains(text(), 'OK')]"), "OK button");
+    public Button receivedFromDMC = new Button(By.xpath("//i[contains(@class, \"glyphicon glyphicon-calendar\")]"), "Date picker");
 
 public HouseholdEquityDetails() {
         super(By.xpath("//div[contains(@class, \"ccm-panel\")]"), "Household and Equity Details page");
@@ -55,6 +60,34 @@ public HouseholdEquityDetails() {
         header.click();
         Assert.assertTrue(mandatoryFieldMess.isPresent());
     }
+
+    public void selectCurrentDate(){
+        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
+       // Date date = calendar.getTime();
+        int day = calendar.get(Calendar.DATE);
+        Label currentDate = new Label(By.xpath(String.format(patternDate, day)), "Date");
+        receivedFromDMC.click();
+        currentDate.click();
+    }
+
+    public void selectPastDate(){
+        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
+        int dayPast = calendar.get(Calendar.DATE)-1;
+        Label pastDate = new Label(By.xpath(String.format(patternDate, dayPast)), "Date");
+        receivedFromDMC.click();
+        pastDate.click();
+    }
+
+    public void validateFutureDateIsDisabled(){
+        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
+        int dayFuture = calendar.get(Calendar.DATE)+1;
+        Label futureDate = new Label(By.xpath(String.format(patternDate, dayFuture)), "Date");
+        receivedFromDMC.click();
+       // System.out.println(futureDate.getElement().getAttribute("disabled"));
+        System.out.println(futureDate.getElement().toString());
+        Assert.assertFalse(futureDate.getElement().getAttribute("disabled").isEmpty());
+    }
+
 
 
 }
