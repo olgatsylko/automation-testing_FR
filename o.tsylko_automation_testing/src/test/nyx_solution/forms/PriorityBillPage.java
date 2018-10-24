@@ -15,8 +15,9 @@ public class PriorityBillPage extends BaseForm {
     public DropDown frequency3 = new DropDown(By.xpath("//select[contains(@name, \"expFrequency3\")]"), "Frequency for Electricity");
     public DropDown frequency4 = new DropDown(By.xpath("//select[contains(@name, \"expFrequency4\")]"), "Frequency for Water");
     public DropDown frequency5 = new DropDown(By.xpath("//select[contains(@name, \"expFrequency5\")]"), "Frequency for County Court Judgement");
-    //public TextBox totalPriorityBills = new TextBox(By.xpath("//td[contains(@colspan, \"3\")}"), "Total Priority Bills");
-    public TextBox totalPriorityBills = new TextBox(By.xpath("//*[@id=\"vm.sfsForm\"]/fieldset/div/table/tbody/tr[8]/td[2]"), "Total Priority Bills");
+    public DropDown frequency6 = new DropDown(By.xpath("//select[contains(@name, \"expFrequency34\")]"), "Frequency for Other");
+    public TextBox totalPriorityBills = new TextBox(By.xpath("//td[contains(@colspan, \"3\")]"), "Total Priority Bills");
+   // public TextBox totalPriorityBills = new TextBox(By.xpath("//*[@id=\"vm.sfsForm\"]/fieldset/div/table/tbody/tr[8]/td[2]"), "Total Priority Bills");
     public Button addCustomType = new Button(By.xpath("//i[contains(@class, \"fa fa-plus fa-fw\")]"), "Add Custom type button");
     public Button deleteCustomType = new Button (By.xpath("//i[contains(@class, \"fa fa-remove fa-fw\")]"), "Delete Custom type button");
     public PopUp confirmLeavePage = new PopUp(By.xpath("//div[contains(text(), 'Are you sure you want to leave current page and do not save data?')]"), "Confirmation to leave the page");
@@ -30,7 +31,7 @@ public class PriorityBillPage extends BaseForm {
     }
 
     public enum Fields {
-        RentAmount("expAmount0"), CouncilTaxAmount("expAmount1"), GasAmount("expAmount2"),  ElectricityAmount("expAmount3"), WaterAmount("expAmount4"),CountyCourtJudgementAmount("expAmount5");
+        RentAmount("expAmount0"), CouncilTaxAmount("expAmount1"), GasAmount("expAmount2"),  ElectricityAmount("expAmount3"), WaterAmount("expAmount4"),CountyCourtJudgementAmount("expAmount5"), OtherAmount("expAmount34");
         private String uniqueLocator;
         Fields(String uniqueLocator) {
             this.uniqueLocator = uniqueLocator;

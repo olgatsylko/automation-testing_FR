@@ -1,25 +1,26 @@
 package nyx_solution;
 
 import framework.BaseTest;
-import nyx_solution.forms.HouseholdEquityDetails;
-import nyx_solution.forms.SfsPending_complete;
+import nyx_solution.forms.HouseholdEquityDetailsPage;
+import nyx_solution.forms.SfsPending_completePage;
+import org.testng.Assert;
 
-import static nyx_solution.forms.HouseholdEquityDetails.Fields.NumberInHouseHold;
+import static nyx_solution.forms.HouseholdEquityDetailsPage.Fields.*;
 
 public class HouseholdEquityTest extends BaseTest {
     public void runTest() {
         logger.step(1);
         logger.info("Click Create");
-        SfsPending_complete sfs = new SfsPending_complete();
+        SfsPending_completePage sfs = new SfsPending_completePage();
         sfs.create();
 
         logger.step(2);
         logger.info("Household and Eq section: household validation message");
-        HouseholdEquityDetails hsDet = new HouseholdEquityDetails();
+        HouseholdEquityDetailsPage hsDet = new HouseholdEquityDetailsPage();
         hsDet.populateItem(NumberInHouseHold, "0");
         hsDet.householdValidationMess();
 
-       /* logger.step(3);
+        logger.step(3);
         logger.info("Household and Eq section: household vs Total sum validation message");
         hsDet.populateItem(NumberInHouseHold, "3");
         hsDet.populateItem(ChildrenUnder16, "1");
@@ -92,15 +93,14 @@ public class HouseholdEquityTest extends BaseTest {
         logger.info("Outstanding Mortgage validation");
         hsDet.populateItem(VALUEofHome, "200000.00");
         hsDet.populateItem(OutstandingMORTGAGE, "100000.00 ");
-        //System.out.println(hsDet.equityOfHome.getValue());
-       // Assert.assertTrue(hsDet.equityOfHome.==0.00);*/
+        //hsDet.equityOfHome.getAutopopulatedValue(); //TBU
 
 
-        /*logger.step(14);
+        logger.step(14);
         logger.info("Click Cancel button");
         hsDet.cancel.click();
         Assert.assertTrue(hsDet.confirmLeavePage.isPresent());
-        hsDet.ok.click();*/
+        hsDet.ok.click();
 
         logger.step(15);
         logger.info("Select current date");
@@ -114,7 +114,6 @@ public class HouseholdEquityTest extends BaseTest {
         logger.step(17);
         logger.info("Validate that future date is disables");
         hsDet.validateFutureDateIsDisabled();
-
 
 
     }

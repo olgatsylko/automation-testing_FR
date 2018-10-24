@@ -8,7 +8,7 @@ import org.testng.Assert;
 import java.util.Calendar;
 import java.util.TimeZone;
 
-public class HouseholdEquityDetails extends BaseForm {
+public class HouseholdEquityDetailsPage extends BaseForm {
     private String pattern = "//input[contains(@name,\"%s\")]";
     private String patternDate = "//span[contains(text(),\"%s\")]/parent::button";
     private Label header = new Label(By.xpath("//div[contains(@class, \"ccm-panel\")]"), "Household and Equity Details page");
@@ -27,7 +27,7 @@ public class HouseholdEquityDetails extends BaseForm {
     public Button ok = new Button(By.xpath("//button[contains(text(), 'OK')]"), "OK button");
     public Button receivedFromDMC = new Button(By.xpath("//i[contains(@class, \"glyphicon glyphicon-calendar\")]"), "Date picker");
 
-public HouseholdEquityDetails() {
+public HouseholdEquityDetailsPage() {
         super(By.xpath("//div[contains(@class, \"ccm-panel\")]"), "Household and Equity Details page");
     }
     public enum Fields {
@@ -83,9 +83,7 @@ public HouseholdEquityDetails() {
         int dayFuture = calendar.get(Calendar.DATE)+1;
         Label futureDate = new Label(By.xpath(String.format(patternDate, dayFuture)), "Date");
         receivedFromDMC.click();
-       // System.out.println(futureDate.getElement().getAttribute("disabled"));
-        System.out.println(futureDate.getElement().toString());
-        Assert.assertFalse(futureDate.getElement().getAttribute("disabled").isEmpty());
+        Assert.assertTrue(futureDate.getElement().getAttribute("disabled").contains("true"));
     }
 
 

@@ -6,7 +6,7 @@ import framework.elements.PopUp;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-public class SfsPending_complete extends BaseForm {
+public class SfsPending_completePage extends BaseForm {
     public Button create = new Button(By.xpath("//a[contains(@class,\"btn btn-primary btn-xs\")]"), "Create");
     public Button delete = new Button(By.xpath("//button[contains(text(), 'Delete')]"), "Delete button");
     public PopUp confirmPopUp = new PopUp (By.xpath("//div[contains(text(), 'Are you sure you want to delete Standard Financial Statement?')]"), "Confirmation popup");
@@ -17,7 +17,7 @@ public class SfsPending_complete extends BaseForm {
         Assert.assertTrue(create.isPresent());
     }
 
-    public SfsPending_complete() {
+    public SfsPending_completePage() {
         super(By.xpath("//input[contains(@id, \"legacyID\")]"), "SFS page");
     }
 

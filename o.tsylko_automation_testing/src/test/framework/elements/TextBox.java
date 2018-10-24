@@ -66,8 +66,6 @@ public class TextBox extends BaseElement {
 		type(value);
 	}
 
-	
-	
 	/**
 	 * Gets value of field
 	 * @return value
@@ -86,7 +84,17 @@ public class TextBox extends BaseElement {
 	}
 
 	public Double getFieldValueDouble(){
-		Double result = Double.parseDouble(getText());
+		String s = getText().replaceAll("£", "");
+		Double result = Double.parseDouble(s);
 		return result;
 	}
+	/*public String getAutopopulatedValue(){
+		JavascriptExecutor js = (JavascriptExecutor) browser.getDriver();
+		//String s = (String) ((JavascriptExecutor) browser.getDriver()).executeScript("angular.element($('#vm.EquityOfHomeValue')).text()");
+		String s = js.executeScript("return document.element.innerHTML").toString();
+		String s2 = (String) js.executeScript("return arguments[0].text;", element);
+		System.out.println(s);
+		return s;
+	}*/
+
 }

@@ -1,10 +1,4 @@
-package nyx_solution.forms;
-
-import framework.BaseForm;
-import framework.elements.Button;
-import framework.elements.TextBox;
-import org.openqa.selenium.By;
-
+/*package nyx_solution.forms;
 public class LoginForm extends BaseForm {
     private final TextBox txbLogin = new TextBox(By.id("user_name"), "Username");
     private final TextBox txbPassword = new TextBox(By.id("password"), "Password");
@@ -20,4 +14,4 @@ public class LoginForm extends BaseForm {
         btnLogin.click();
         browser.waitForPageToLoad();
     }
-}
+}*/

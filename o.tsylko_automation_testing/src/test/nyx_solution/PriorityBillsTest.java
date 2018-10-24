@@ -1,23 +1,24 @@
 package nyx_solution;
 
 import framework.BaseTest;
-import nyx_solution.forms.HouseholdEquityDetails;
+import nyx_solution.forms.HouseholdEquityDetailsPage;
 import nyx_solution.forms.PriorityBillPage;
-import nyx_solution.forms.SfsPending_complete;
+import nyx_solution.forms.SfsPending_completePage;
+import nyx_solution.forms.SummaryBlock;
 import org.testng.Assert;
 
 import static nyx_solution.forms.PriorityBillPage.Fields.*;
 
-public class ExpendGroupPriorityBills extends BaseTest {
+public class PriorityBillsTest extends BaseTest {
     public void runTest() {
         logger.step(1);
         logger.info("Click Create");
-        SfsPending_complete sfs = new SfsPending_complete();
+        SfsPending_completePage sfs = new SfsPending_completePage();
         sfs.create();
 
         logger.step(2);
         logger.info("Navigate to Priority Bills");
-        HouseholdEquityDetails hsDet2 = new HouseholdEquityDetails();
+        HouseholdEquityDetailsPage hsDet2 = new HouseholdEquityDetailsPage();
         hsDet2.householdType.selectItem("Couple with no children");
         hsDet2.residenceStatus.selectItem("Tenant");
         hsDet2.next.click();
@@ -114,6 +115,21 @@ public class ExpendGroupPriorityBills extends BaseTest {
         logger.info("Delete custom priority bills type");
         pbp.deleteCustomType.click();
         Assert.assertFalse(pbp.inputCustomType.isPresent());
+
+        logger.step(13);
+        logger.info("Add Other Priority bill monthly 100  and check Total Priority Bill, Total Expenditure and Disposable income ");
+        pbp.addCustomType.click();
+        SummaryBlock sm = new SummaryBlock();
+        Double totalExp = sm.totalExpenditure.getFieldValueDouble();
+        Double totalPriorBills = pbp.totalPriorityBills.getFieldValueDouble();
+        Double dispInc = sm.disposableIncome.getFieldValueDouble();
+        pbp.populateItem(OtherAmount, "100.00");
+        pbp.frequency6.selectItem("Monthly");
+        Assert.assertTrue(pbp.totalPriorityBills.getFieldValueDouble() == (totalPriorBills +100.00));
+        Assert.assertTrue(sm.totalExpenditure.getFieldValueDouble() == (totalExp +100.00));
+        Assert.assertTrue(sm.disposableIncome.getFieldValueDouble() ==(dispInc - 100));
+        pbp.deleteCustomType.click();
+
 
         logger.step(13);
         logger.info("Add 10 custom priority bills types");
