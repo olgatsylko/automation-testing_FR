@@ -1,6 +1,7 @@
 package framework.elements;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -22,6 +23,9 @@ public class DropDown extends BaseElement {
 
     public void selectItem(String value) {
         WebElement el = browser.getDriver().findElement(this.getLocator());
+        if (browser.getDriver() instanceof JavascriptExecutor) {
+            ((JavascriptExecutor)browser.getDriver()).executeScript("arguments[0].style.border='3px solid red'", el);
+        }
         Select categories = new Select(el);
         //categories.selectByValue(value);
         categories.selectByVisibleText(value);

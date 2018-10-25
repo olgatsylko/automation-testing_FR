@@ -11,10 +11,15 @@
         <classes>
             <class name="nyx_solution.HouseholdEquityTest"/>
         </classes>
-    </test>-->
+    </test>
         <test name="Validation of Priority Bills page" preserve-order="true">
             <classes>
                 <class name="nyx_solution.PriorityBillsTest"/>
             </classes>
-        </test>
+        </test>-->
+    <test name="Validation of Fixed Costs page" preserve-order="true">
+        <classes>
+            <class name="nyx_solution.FixedCostTest"/>
+        </classes>
+    </test>
 </suite>

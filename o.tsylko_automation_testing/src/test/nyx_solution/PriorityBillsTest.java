@@ -1,6 +1,7 @@
 package nyx_solution;
 
 import framework.BaseTest;
+import framework.elements.DropDown;
 import nyx_solution.forms.HouseholdEquityDetailsPage;
 import nyx_solution.forms.PriorityBillPage;
 import nyx_solution.forms.SfsPending_completePage;
@@ -29,35 +30,12 @@ public class PriorityBillsTest extends BaseTest {
 
         logger.step(4);
         logger.info("Validate Frequency dropdown values");
-        pbp.frequency0.selectItem("Weekly");
-        pbp.frequency0.selectItem("Fortnightly");
-        pbp.frequency0.selectItem("Four Weekly");
-        pbp.frequency0.selectItem("Monthly");
-
-        pbp.frequency1.selectItem("Weekly");
-        pbp.frequency1.selectItem("Fortnightly");
-        pbp.frequency1.selectItem("Four Weekly");
-        pbp.frequency1.selectItem("Monthly");
-
-        pbp.frequency2.selectItem("Weekly");
-        pbp.frequency2.selectItem("Fortnightly");
-        pbp.frequency2.selectItem("Four Weekly");
-        pbp.frequency2.selectItem("Monthly");
-
-        pbp.frequency3.selectItem("Weekly");
-        pbp.frequency3.selectItem("Fortnightly");
-        pbp.frequency3.selectItem("Four Weekly");
-        pbp.frequency3.selectItem("Monthly");
-
-        pbp.frequency4.selectItem("Weekly");
-        pbp.frequency4.selectItem("Fortnightly");
-        pbp.frequency4.selectItem("Four Weekly");
-        pbp.frequency4.selectItem("Monthly");
-
-        pbp.frequency5.selectItem("Weekly");
-        pbp.frequency5.selectItem("Fortnightly");
-        pbp.frequency5.selectItem("Four Weekly");
-        pbp.frequency5.selectItem("Monthly");
+        for (DropDown freq:  pbp.getAllFrequencyDropDowns()){
+            freq.selectItem("Weekly");
+            freq.selectItem("Fortnightly");
+            freq.selectItem("Four Weekly");
+            freq.selectItem("Monthly");
+        }
 
         logger.step(5);
         logger.info("Validate Total Priority Bills for Weekly frequency");

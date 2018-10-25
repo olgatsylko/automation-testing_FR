@@ -3,7 +3,6 @@ package framework.elements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 
-
 /**
  * The class that describes an input field
  */

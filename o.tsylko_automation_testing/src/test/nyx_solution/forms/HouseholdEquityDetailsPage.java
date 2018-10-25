@@ -27,7 +27,7 @@ public class HouseholdEquityDetailsPage extends BaseForm {
     public Button ok = new Button(By.xpath("//button[contains(text(), 'OK')]"), "OK button");
     public Button receivedFromDMC = new Button(By.xpath("//i[contains(@class, \"glyphicon glyphicon-calendar\")]"), "Date picker");
 
-public HouseholdEquityDetailsPage() {
+    public HouseholdEquityDetailsPage() {
         super(By.xpath("//div[contains(@class, \"ccm-panel\")]"), "Household and Equity Details page");
     }
     public enum Fields {
@@ -41,17 +41,14 @@ public HouseholdEquityDetailsPage() {
         TextBox fieldName = new TextBox(By.xpath(String.format(pattern, itemName.uniqueLocator)), "fieldName");
         fieldName.setText(value);
     }
-
     public void householdValidationMess(){
         header.click();
         Assert.assertTrue(householdMess.isPresent());
     }
-
     public void householdSumMess(){
         header.click();
         Assert.assertTrue(householdMessVsTotalChild.isPresent());
     }
-
     public void validationMessIsNotPresent(){
         header.click();
         Assert.assertFalse(householdMessVsTotalChild.isPresent());
@@ -60,7 +57,6 @@ public HouseholdEquityDetailsPage() {
         header.click();
         Assert.assertTrue(mandatoryFieldMess.isPresent());
     }
-
     public void selectCurrentDate(){
         Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
        // Date date = calendar.getTime();
@@ -69,7 +65,6 @@ public HouseholdEquityDetailsPage() {
         receivedFromDMC.click();
         currentDate.click();
     }
-
     public void selectPastDate(){
         Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
         int dayPast = calendar.get(Calendar.DATE)-1;
@@ -77,7 +72,6 @@ public HouseholdEquityDetailsPage() {
         receivedFromDMC.click();
         pastDate.click();
     }
-
     public void validateFutureDateIsDisabled(){
         Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
         int dayFuture = calendar.get(Calendar.DATE)+1;
@@ -85,7 +79,4 @@ public HouseholdEquityDetailsPage() {
         receivedFromDMC.click();
         Assert.assertTrue(futureDate.getElement().getAttribute("disabled").contains("true"));
     }
-
-
-
 }
