@@ -108,7 +108,6 @@ public class PriorityBillsTest extends BaseTest {
         Assert.assertTrue(sm.disposableIncome.getFieldValueDouble() ==(dispInc - 100));
         pbp.deleteCustomType.click();
 
-
         logger.step(13);
         logger.info("Add 10 custom priority bills types");
         for (int i = 0; i < 10; i++) {

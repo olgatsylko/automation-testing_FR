@@ -28,7 +28,6 @@ public final class PropertiesResourceManager {
 	public PropertiesResourceManager(final String resourceName) {
 		properties = appendFromResource(properties, resourceName);
 	}
-
 	/**
 	 * Конструктор для создания одного объекта из двух properties-файлов
 	 * @param defaultResourceName Default Resource Name

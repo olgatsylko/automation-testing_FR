@@ -1,13 +1,6 @@
 package framework;
 
-import java.io.File;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.util.Arrays;
-import java.util.HashMap;
-
-import javax.naming.NamingException;
-
+import com.opera.core.systems.OperaDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -18,7 +11,12 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-import com.opera.core.systems.OperaDriver;
+import javax.naming.NamingException;
+import java.io.File;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  * The class-initializer-based browser string parameter.
@@ -45,7 +43,6 @@ public abstract class BrowserFactory {
 				Logger.getInstance().debug(e1.getMessage());
 			}
 			System.setProperty("webdriver.chrome.driver", myFile.getAbsolutePath());
-			//Added by Tsylko
 			HashMap<String, Object> preferences = new HashMap<String, Object>();
 			preferences.put("profile.default_content_settings.popups", 0);
 			//preferences.put("download.default_directory", Browser.downloadPath);
@@ -77,11 +74,8 @@ public abstract class BrowserFactory {
 			} catch (URISyntaxException e1) {
 				Logger.getInstance().debug(e1.getMessage());
 			}
-			//Added by Tsylko
 			System.setProperty("webdriver.gecko.driver", myFile.getAbsolutePath());
 			FirefoxProfile profile = new FirefoxProfile();
-			//profile.setPreference("browser.download.dir", Browser.downloadPath);
-			//profile.setPreference("browser.download.folderList", 2);
 			profile.setPreference("browser.helperApps.neverAsk.saveToDisk",
 					"application/octet-stream;");
 			profile.setPreference("browser.download.manager.showWhenStarting", false );

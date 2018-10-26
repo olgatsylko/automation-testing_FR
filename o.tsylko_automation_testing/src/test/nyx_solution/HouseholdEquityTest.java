@@ -93,29 +93,25 @@ public class HouseholdEquityTest extends BaseTest {
         logger.info("Outstanding Mortgage validation");
         hsDet.populateItem(VALUEofHome, "200000.00");
         hsDet.populateItem(OutstandingMORTGAGE, "100000.00 ");
-        //hsDet.equityOfHome.getAutopopulatedValue(); //TBU
-
+        //hsDet.equityOfHome.getAutopopulatedValue(); //How to fetch the value from disabled field?
 
         logger.step(14);
+        logger.info("Select current date");
+        hsDet.selectCurrentDate();
+
+        logger.step(15);
+        logger.info("Select past date");
+        hsDet.selectPastDate();
+
+        logger.step(16);
+        logger.info("Validate that future date is disables");
+        hsDet.validateFutureDateIsDisabled();
+
+        logger.step(17);
         logger.info("Click Cancel button");
         hsDet.cancel.click();
         Assert.assertTrue(hsDet.confirmLeavePage.isPresent());
         hsDet.ok.click();
-
-        logger.step(15);
-        logger.info("Select current date");
-        hsDet.selectCurrentDate();
-
-
-        logger.step(16);
-        logger.info("Select past date");
-        hsDet.selectPastDate();
-
-        logger.step(17);
-        logger.info("Validate that future date is disables");
-        hsDet.validateFutureDateIsDisabled();
-
-
     }
 
 

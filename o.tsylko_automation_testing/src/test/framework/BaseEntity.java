@@ -32,7 +32,6 @@ public abstract class BaseEntity {
 	protected static String getLoc(final String key) {
 		return Logger.getLoc(key);
 	}
-
 	// ==============================================================================================
 	// Methods for logging
 
@@ -44,9 +43,6 @@ public abstract class BaseEntity {
 	 * @return null
 	 */
 	protected abstract String formatLogMsg(String message);
-
-	
-
 	/**
 	 * Informative message.
 	 * 
@@ -56,7 +52,6 @@ public abstract class BaseEntity {
 	protected void info(final String message) {
 		logger.info(formatLogMsg(message));
 	}
-
 	/**
 	 * Warning.
 	 * 
@@ -66,7 +61,6 @@ public abstract class BaseEntity {
 	protected void warn(final String message) {
 		logger.warn(formatLogMsg(message));
 	}
-
 	/**
 	 * Error message without stopping the test.
 	 * 
@@ -76,7 +70,6 @@ public abstract class BaseEntity {
 	protected void error(final String message) {
 		logger.error(formatLogMsg(message));
 	}
-
 	/**
 	 * Fatal error message.
 	 * 
@@ -164,7 +157,6 @@ public abstract class BaseEntity {
 		}
 	}
 
-
 	/**
 	 * killing process by Image name
 	 */
@@ -204,15 +196,12 @@ public abstract class BaseEntity {
 		browser = Browser.getInstance();
 		browser.windowMaximise();
 		stepNumber = 1;
-		
 	}
-
 	/**
 	 * Close browser after each test Class
 	 */
 	@AfterClass
 	public void after() {
-		
 		if (browser.isBrowserAlive()) {
 			browser.exit();
 			checkAndKill();

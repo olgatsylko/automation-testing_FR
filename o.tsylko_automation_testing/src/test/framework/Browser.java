@@ -192,7 +192,7 @@ public final class Browser {
 		}
 		// Logger.getInstance().info("waitForPageToLoad ended");
 	}
-//Added by Tsylko
+//Added by VT
 	public void waitForLoad() {
 		ExpectedCondition<Boolean> pageLoadCondition = new
 				ExpectedCondition<Boolean>() {
@@ -226,8 +226,6 @@ public final class Browser {
 	public void navigate(final String url) {
 		driver.navigate().to(url);
 	}
-
-	
 
 	/**
 	 * get RemoteWebDriver

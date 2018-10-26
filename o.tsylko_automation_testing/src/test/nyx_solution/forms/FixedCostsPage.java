@@ -31,7 +31,11 @@ public class FixedCostsPage extends BaseForm {
     public Button ok = new Button(By.xpath("//button[contains(text(), 'OK')]"), "OK button");
     public Button cancel = new Button(By.xpath("//button[contains(text(), 'Cancel')]"), "Cancel button");
     public Button previous = new Button(By.xpath("//button[contains(text(), 'Previous')]"), "Previous button");
-    public TextBox totalPriorityBills = new TextBox(By.xpath("//td[contains(@colspan, \"3\")]"), "Total Priority Bills");
+    public Button addCustomType = new Button(By.xpath("//i[contains(@class, \"fa fa-plus fa-fw\")]"), "Add Custom type button");
+    public Button deleteCustomType = new Button (By.xpath("//i[contains(@class, \"fa fa-remove fa-fw\")]"), "Delete Custom type button");
+    public TextBox inputCustomType = new TextBox(By.xpath("//input[contains(@name, \"expName34\")]"), "input Custom Type");
+    public TextBox totalFixedCosts = new TextBox(By.xpath("//td[contains(@colspan, \"3\")]"), "Total Fixed Costs");
+    public Button next = new Button(By.xpath("//button[contains(text(), 'Next')]"), "Next button");
 
     private String pattern = "//input[contains(@name,\"%s\")]";
     public FixedCostsPage() {

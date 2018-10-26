@@ -46,7 +46,6 @@ public class PriorityBillPage extends BaseForm {
         TextBox fieldName = new TextBox(By.xpath(String.format(pattern, itemName.uniqueLocator)), "fieldName");
         fieldName.setText(value);
     }
-
     public ArrayList <DropDown> getAllFrequencyDropDowns(){
         frequency = new ArrayList<>();
         frequency.add(frequency0);
@@ -57,6 +56,5 @@ public class PriorityBillPage extends BaseForm {
         frequency.add(frequency5);
         return frequency;
     }
-
 
 }
